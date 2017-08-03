@@ -6,13 +6,13 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 18:03:20 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/03 18:07:43 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/03 18:27:09 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-void	conv_img(int x, int y, t_fdf *e)
+void	conv_img(int x, int y, t_fra *e)
 {
 	int	result;
 
@@ -22,7 +22,7 @@ void	conv_img(int x, int y, t_fdf *e)
 	((t_color *)e->data)[result] = e->pix;
 }
 
-void	bresenham(int st[2], int en[2], t_fdf *e)
+void	bresenham(int st[2], int en[2], t_fra *e)
 {
 	t_line	l;
 

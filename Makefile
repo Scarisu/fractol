@@ -6,17 +6,16 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:32:35 by pbernier          #+#    #+#              #
-#    Updated: 2017/08/03 18:06:12 by pbernier         ###   ########.fr        #
+#    Updated: 2017/08/03 18:29:50 by pbernier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PROJECT			=	Fdf
-NAME			=	fdf
+PROJECT			=	FRACTOL
+NAME			=	fractol
 BINDIR			=	bin/
 SRCDIR			=	src/
-SRC				=	fdf.c \
-					link.c \
-					value.c
+SRC				=	fractol.c \
+					print_pix.c
 SIERRA			=
 OBJ				=	$(addprefix $(BINDIR),$(SRC:.c=.o))
 LIB				=	libft/libft.a \
