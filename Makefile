@@ -15,7 +15,9 @@ NAME			=	fractol
 BINDIR			=	bin/
 SRCDIR			=	src/
 SRC				=	fractol.c \
-					print_pix.c
+					print_pix.c \
+					color.c \
+					key.c 
 SIERRA			=
 OBJ				=	$(addprefix $(BINDIR),$(SRC:.c=.o))
 LIB				=	libft/libft.a \

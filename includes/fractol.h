@@ -52,7 +52,14 @@ typedef struct		s_fra
 	t_color			pix;
 }					t_fra;
 
+typedef struct		s_err
+{
+	char			*name;
+}					t_err;
+
+int					key(int key, t_fra *e);
 void				conv_img(int x, int y, t_fra *e);
 void				bresenham(int st[2], int en[2], t_fra *e);
+t_color			get_color(int r, int g, int b, int a);
 
 #endif
