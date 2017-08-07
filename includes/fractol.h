@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/07 14:54:56 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/07 16:41:45 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ void				bresenham(int st[2], int en[2], t_fra *e);
 t_color				get_color(int r, int g, int b, int a);
 void				julia(t_fra *e);
 void				mandelbrot(t_fra *e);
+int					ft_pow(int nb, int pow);
 
 #endif

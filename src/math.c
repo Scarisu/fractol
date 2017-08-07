@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   julia.c                                            :+:      :+:    :+:   */
+/*   math.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/07 13:03:11 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/07 16:45:43 by pbernier         ###   ########.fr       */
+/*   Created: 2017/08/07 16:39:43 by pbernier          #+#    #+#             */
+/*   Updated: 2017/08/07 16:47:13 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-void	julia(t_fra *e)
+int		ft_pow(int nb, int pow)
 {
-	int		st[2];
+	int		res;
 
-	ft_memcpy(st, ((int[2]){X / 2, Y / 2}), sizeof(int[2]));
-	// while (i++ < 100)
-	// {
-		conv_img(
-
-			st[0],
-			st[1]
-
-			, e);
-	// }
-
-
-	//int		*k;
-
-	// k = multi_complex(((int[2]){1, 1}), ((int[2]){1, 1}));
-	// printf("%d - %d\n", k[0], k[1]);
-	printf("%d\n", ft_pow(3, 4));
+	res = 1;
+	while (pow-- > 1)
+		res = res * nb;
+	return (res);
 }
+
+// int		*multi_complex(int fs[2], int sd[2])
+// {
+// 	int		res[2];
+// 	int		hyp;
+//
+// 	hyp = sqrt();
+//
+// 	return ((int *)res);
+// }

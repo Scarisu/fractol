@@ -6,13 +6,13 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 18:07:31 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/07 14:57:31 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/07 15:35:49 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-void		my_error(int nb, t_fra e)
+void	my_error(int nb, t_fra e)
 {
 	if (nb == 0)
 	{
@@ -39,7 +39,7 @@ int		fractol_name(t_fra e)
 	return (i);
 }
 
-void	init(t_fra *e, void *(*fra[2])(t_fra))
+void	init(t_fra *e, void *(*fra[2])(t_fra *))
 {
 	int		i;
 
@@ -55,13 +55,13 @@ void	init(t_fra *e, void *(*fra[2])(t_fra))
 int		main(int ac, char **av)
 {
 	t_fra		e;
-	void		*(*fra[2])(t_fra);
+	void		*(*fra[2])(t_fra *);
 
 	e.name = av[1];
 	if (ac != 2)
 		my_error(1, e);
 	init(&e, fra);
-	fra[fractol_name(e)](e);
+	fra[fractol_name(e)](&e);
 	mlx_put_image_to_window(e.mlx, e.win, e.img, 0, 0);
 	mlx_hook(e.win, 2, 3, key, &e);
 	mlx_loop(e.mlx);
