@@ -6,7 +6,7 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:32:35 by pbernier          #+#    #+#              #
-#    Updated: 2017/08/03 18:29:50 by pbernier         ###   ########.fr        #
+#    Updated: 2017/08/07 13:06:40 by pbernier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ SRCDIR			=	src/
 SRC				=	fractol.c \
 					print_pix.c \
 					color.c \
-					key.c 
+					key.c \
+					julia.c \
+					mandelbrot.c
 SIERRA			=
 OBJ				=	$(addprefix $(BINDIR),$(SRC:.c=.o))
 LIB				=	libft/libft.a \
