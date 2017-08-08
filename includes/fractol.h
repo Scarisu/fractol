@@ -6,15 +6,15 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/07 17:40:37 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/08 17:43:33 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define X 1280
-# define Y 720
+# define X 864
+# define Y 768
 
 # include "../libft/includes/libft.h"
 # include "../minilibx_macos/mlx.h"
