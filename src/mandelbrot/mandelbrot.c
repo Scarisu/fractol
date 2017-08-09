@@ -12,6 +12,18 @@
 
 #include <fractol.h>
 
+void	str_string(t_fra *e)
+{
+	e->s_alpha = ft_itoa(e->m.i * e->alpha);
+	e->s_imax = ft_itoa(e->m.imax);
+	mlx_string_put(e->mlx, e->win, 5, 5, 10 * e->tmp, "alpha : ");
+	mlx_string_put(e->mlx, e->win, 80, 5, 10, e->s_alpha);
+	mlx_string_put(e->mlx, e->win, 5, 25, 10, "imax  : ");
+	mlx_string_put(e->mlx, e->win, 80, 25, 10, e->s_imax);
+	free(e->s_alpha);
+	free(e->s_imax);
+}
+
 void	calcul_mandelbrot(t_fra *e)
 {
 	long double		tmp;
@@ -49,9 +61,6 @@ void	mandelbrot(t_fra *e)
 		}
 	}
 	mlx_put_image_to_window(e->mlx, e->win, e->img, 0, 0);
-	e->s_alpha = ft_itoa(e->m.i * e->alpha);
-	mlx_string_put(e->mlx, e->win, 5, 5, 10, "alpha : ");
-	mlx_string_put(e->mlx, e->win, 80, 5, 10, e->s_alpha);
-	free(e->s_alpha);
+	str_string(e);
 	mlx_hook(e->win, 2, 3, key_mandelbrot, e);
 }

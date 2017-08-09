@@ -19,6 +19,8 @@
 # define SPA 49
 # define PLU 69
 # define MIN 78
+# define UP 126
+# define DOW 125
 //(X = 1,125 * y)
 # include "../libft/includes/libft.h"
 # include "../minilibx_macos/mlx.h"
@@ -31,10 +33,10 @@
 
 typedef struct		s_mendel
 {
-	int				i;
-	int				imax;
 	int				x;
 	int				y;
+	long double		i;
+	long double		imax;
 	long double		x1;
 	long double		x2;
 	long double		y1;
@@ -63,7 +65,9 @@ typedef struct		s_fra
 	void			*img;
 	char			*data;
 	int				alpha;
+	int				tmp;
 	char			*s_alpha;
+	char			*s_imax;
 	t_color			pix;
 	t_mendel		m;
 }					t_fra;

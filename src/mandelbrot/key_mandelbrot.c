@@ -16,9 +16,13 @@ int		key_mandelbrot(int key, t_fra *e)
 {
 	if (key == ESC)
 		exit(0);
-	e->alpha += (key == PLU) ? 1 : 0;
-	e->alpha -= (key == MIN) ? 1 : 0;
-	//e->m.imax *= 1.8;
+	//e->m.imax *= (key == PLU) ? 1.8 : 0;
+	//e->m.imax /= (key == MIN) ? 1.8 : 0;
+	e->tmp += (key == 12) ? 1 : 0;
+	printf("%d ", e->tmp);
+	e->alpha += (key == UP) ? 1 : 0;
+	e->alpha -= (key == DOW) ? 1 : 0;
+	printf("%d\n", key);
 	all_black(e);
 	mandelbrot(e);
 	return (0);
