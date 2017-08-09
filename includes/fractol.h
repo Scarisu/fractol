@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/09 17:07:11 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/09 17:26:05 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,14 @@ typedef struct		s_fra
 	void			*win;
 	void			*img;
 	char			*data;
-	void 			*tamere;
-	char			*tamere2;
 	t_color			pix;
 	t_mendel		m;
 }					t_fra;
 
 void				conv_img(int x, int y, t_fra *e);
+
 t_color				get_color(int r, int g, int b, int a);
+void				all_black(t_fra *e);
 
 void				julia(t_fra *e);
 
