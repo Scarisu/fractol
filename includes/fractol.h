@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/09 17:41:22 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/09 18:11:43 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct		s_fra
 	void			*img;
 	char			*data;
 	int				alpha;
+	char			*s_alpha;
 	t_color			pix;
 	t_mendel		m;
 }					t_fra;

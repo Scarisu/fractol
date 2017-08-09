@@ -6,7 +6,7 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/21 03:19:16 by pbernier          #+#    #+#              #
-#    Updated: 2017/06/23 17:52:05 by pbernier         ###   ########.fr        #
+#    Updated: 2017/08/09 17:52:36 by pbernier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,14 +86,13 @@ SRC			=	ft_putstr.c \
 				ft_strtabdel.c \
 				ft_itoa_base.c \
 				ft_strsplitstr.c \
-				get_next_line.c \
 				ft_intlen_base.c \
 				ft_strreset.c \
 				ft_llen.c \
 				get_next_line.c
 OBJ			=	$(addprefix $(BINDIR),$(SRC:.c=.o))
 CC			=	gcc
-CFLAGS		=	-Wall -Werror -Wextra -I includes/ -O2 -Ofast
+CFLAGS		=	-Wall -Werror -Wextra -I includes/ -Ofast
 
 all: $(NAME)
 

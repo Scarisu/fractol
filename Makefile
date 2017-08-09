@@ -6,7 +6,7 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:32:35 by pbernier          #+#    #+#              #
-#    Updated: 2017/08/09 15:33:49 by pbernier         ###   ########.fr        #
+#    Updated: 2017/08/09 17:51:46 by pbernier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ OBJ				=	$(addprefix $(BINDIR),$(SRC:.c=.o))
 LIB				=	libft/libft.a \
 					minilibx_macos$(SIERRA)/libmlx.a
 CC				=	gcc
-FLAGS			=	-Wall -Werror -Wextra
+FLAGS			=	-Wall -Werror -Wextra -Ofast
 FLAGS_MLX		=	-framework OpenGL -framework AppKit
 INCLUDES		=	-I includes/ -I libft/includes/
 
