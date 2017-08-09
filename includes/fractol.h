@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/08 17:43:33 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/09 17:07:11 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 
 # define X 864
 # define Y 768
-
+# define ESC 53
+# define SPA 49
+# define PLU 78
+# define MIN 69
+//(X = 1,125 * y)
 # include "../libft/includes/libft.h"
 # include "../minilibx_macos/mlx.h"
 # include <sys/types.h>
@@ -25,15 +29,23 @@
 # include <stdio.h>
 # include <math.h>
 
-typedef struct		s_line
+typedef struct		s_mendel
 {
-	int				dx;
-	int				sx;
-	int				dy;
-	int				sy;
-	int				err;
-	int				e2;
-}					t_line;
+	int				i;
+	int				imax;
+	int				x;
+	int				y;
+	long double		x1;
+	long double		x2;
+	long double		y1;
+	long double		y2;
+	long double		zoom_x;
+	long double		zoom_y;
+	long double		c_r;
+	long double		c_i;
+	long double		z_r;
+	long double		z_i;
+}					t_mendel;
 
 typedef struct		s_color
 {
@@ -50,18 +62,22 @@ typedef struct		s_fra
 	void			*win;
 	void			*img;
 	char			*data;
+	void 			*tamere;
+	char			*tamere2;
 	t_color			pix;
+	t_mendel		m;
 }					t_fra;
 
-int					key(int key, t_fra *e);
 void				conv_img(int x, int y, t_fra *e);
-void				bresenham(int st[2], int en[2], t_fra *e);
 t_color				get_color(int r, int g, int b, int a);
-void				julia(t_fra *e);
-void				mandelbrot(t_fra *e);
-double				ft_pow(int nb, int pow);
-double				ft_hypotenuse(int a, int b);
-int					*multi_complex(int fs[2], int sd[2]);
 
+void				julia(t_fra *e);
+
+void				mandelbrot(t_fra *e);
+void				init_mlx_mendelbrot(t_fra *e);
+void				init_mandelbrot(t_fra *e);
+int					key_mandelbrot(int key, t_fra *e);
+
+void				burninship(t_fra *e);
 
 #endif

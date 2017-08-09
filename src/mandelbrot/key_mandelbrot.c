@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color.c                                            :+:      :+:    :+:   */
+/*   key_mandelbrot.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/03 18:07:31 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/09 15:25:07 by pbernier         ###   ########.fr       */
+/*   Created: 2017/08/09 14:36:48 by pbernier          #+#    #+#             */
+/*   Updated: 2017/08/09 17:08:03 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
 
-t_color	get_color(int r, int g, int b, int a)
+int		key_mandelbrot(int key, t_fra *e)
 {
-	t_color	color;
+	// int			i;
 
-	color.blue = b;
-	color.green = g;
-	color.red = r;
-	color.alpha = a;
-	return (color);
+	key += 0;
+	// mlx_destroy_image(e->mlx, e->img);
+	// e->img = mlx_new_image(e->mlx, X, Y);
+	// e->data = mlx_get_data_addr(e->img, &i, &i, &i);
+	mandelbrot(e);
+	return (0);
 }
-
-// int		*hue_color(int r, int g, int b, int i)
-// {
-//
-// }

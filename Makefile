@@ -6,7 +6,7 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:32:35 by pbernier          #+#    #+#              #
-#    Updated: 2017/08/07 16:40:47 by pbernier         ###   ########.fr        #
+#    Updated: 2017/08/09 15:33:49 by pbernier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,15 @@ SRCDIR			=	src/
 SRC				=	fractol.c \
 					print_pix.c \
 					color.c \
-					key.c \
-					julia.c \
-					mandelbrot.c \
-					math.c
+					julia/init_julia.c \
+					julia/key_julia.c \
+					julia/julia.c \
+					mandelbrot/init_mandelbrot.c \
+					mandelbrot/key_mandelbrot.c \
+					mandelbrot/mandelbrot.c \
+					burningship/init_burningship.c \
+					burningship/key_burningship.c \
+					burningship/burningship.c
 SIERRA			=
 OBJ				=	$(addprefix $(BINDIR),$(SRC:.c=.o))
 LIB				=	libft/libft.a \
@@ -46,6 +51,10 @@ $(BINDIR)%.o: $(SRCDIR)%.c
 
 $(BINDIR):
 	@mkdir bin
+	@mkdir bin/julia
+	@mkdir bin/mandelbrot
+	@mkdir bin/burningship
+
 
 clean:
 	@rm -f $(OBJ)
