@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/09 17:26:05 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/09 17:41:22 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # define Y 768
 # define ESC 53
 # define SPA 49
-# define PLU 78
-# define MIN 69
+# define PLU 69
+# define MIN 78
 //(X = 1,125 * y)
 # include "../libft/includes/libft.h"
 # include "../minilibx_macos/mlx.h"
@@ -62,6 +62,7 @@ typedef struct		s_fra
 	void			*win;
 	void			*img;
 	char			*data;
+	int				alpha;
 	t_color			pix;
 	t_mendel		m;
 }					t_fra;

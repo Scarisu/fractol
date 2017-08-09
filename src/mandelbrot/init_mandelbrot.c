@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:09:52 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/09 17:18:22 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/09 17:45:04 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	init_mlx_mendelbrot(t_fra *e)
 	e->win = mlx_new_window(e->mlx, X, Y, e->name);
 	e->img = mlx_new_image(e->mlx, X, Y);
 	e->data = mlx_get_data_addr(e->img, &i, &i, &i);
+	e->alpha = 1;
 }
 
 void	init_mandelbrot(t_fra *e)

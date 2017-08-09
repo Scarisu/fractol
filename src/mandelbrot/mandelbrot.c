@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 13:03:19 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/09 17:18:05 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/09 17:44:32 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	mandelbrot(t_fra *e)
 			if (e->m.i == e->m.imax)
 				e->pix = get_color(0, 0, 0, 0);
 			else
-					e->pix = get_color(100, 131, 66, e->m.i * 10);
+					e->pix = get_color(100, 131, 66, e->m.i * e->alpha);
 			conv_img(e->m.x, e->m.y, e);
 		}
 	}
