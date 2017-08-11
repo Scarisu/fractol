@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 13:03:19 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/09 18:23:04 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/11 16:45:25 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	str_string(t_fra *e)
 {
 	e->s_alpha = ft_itoa(e->m.i * e->alpha);
 	e->s_imax = ft_itoa(e->m.imax);
-	mlx_string_put(e->mlx, e->win, 5, 5, 10 * e->tmp, "alpha : ");
-	mlx_string_put(e->mlx, e->win, 80, 5, 10, e->s_alpha);
-	mlx_string_put(e->mlx, e->win, 5, 25, 10, "imax  : ");
-	mlx_string_put(e->mlx, e->win, 80, 25, 10, e->s_imax);
+	mlx_string_put(e->mlx, e->win, 5, 5, WHITE, "alpha : ");
+	mlx_string_put(e->mlx, e->win, 80, 5, WHITE, e->s_alpha);
+	mlx_string_put(e->mlx, e->win, 5, 25, WHITE, "imax  : ");
+	mlx_string_put(e->mlx, e->win, 80, 25, WHITE, e->s_imax);
 	free(e->s_alpha);
 	free(e->s_imax);
 }
@@ -56,7 +56,8 @@ void	mandelbrot(t_fra *e)
 			if (e->m.i == e->m.imax)
 				e->pix = get_color(0, 0, 0, 0);
 			else
-					e->pix = get_color(100, 131, 66, e->m.i * e->alpha);
+					e->pix = get_color(e->rgb[0], e->rgb[1], e->rgb[2],
+						e->m.i * e->alpha);
 			conv_img(e->m.x, e->m.y, e);
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/09 18:11:43 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/11 16:44:02 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@
 # define MIN 78
 # define UP 126
 # define DOW 125
+# define R 15
+# define C 8
 //(X = 1,125 * y)
+# define WHITE 0xFFFFFF
+
 # include "../libft/includes/libft.h"
 # include "../minilibx_macos/mlx.h"
 # include <sys/types.h>
@@ -65,7 +69,9 @@ typedef struct		s_fra
 	void			*img;
 	char			*data;
 	int				alpha;
-	int				tmp;
+	int				mul_imax;
+	int				color;
+	int				*rgb;
 	char			*s_alpha;
 	char			*s_imax;
 	t_color			pix;
@@ -76,12 +82,14 @@ void				conv_img(int x, int y, t_fra *e);
 
 t_color				get_color(int r, int g, int b, int a);
 void				all_black(t_fra *e);
+int					*hue_color(int i);
 
 void				julia(t_fra *e);
 
 void				mandelbrot(t_fra *e);
 void				init_mlx_mendelbrot(t_fra *e);
 void				init_mandelbrot(t_fra *e);
+void				reset_mandelbrot(t_fra *e);
 int					key_mandelbrot(int key, t_fra *e);
 
 void				burninship(t_fra *e);
