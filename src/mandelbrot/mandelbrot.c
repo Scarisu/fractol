@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 13:03:19 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/11 16:45:25 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 01:28:18 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,5 @@ void	mandelbrot(t_fra *e)
 	mlx_put_image_to_window(e->mlx, e->win, e->img, 0, 0);
 	str_string(e);
 	mlx_hook(e->win, 2, 3, key_mandelbrot, e);
+	mlx_mouse_hook(e->win, key_mouse_mandelbrot, e);
 }

@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/11 16:44:02 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 01:33:31 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@
 # define MIN 78
 # define UP 126
 # define DOW 125
-# define R 15
-# define C 8
+# define KEY_R 15
+# define KEY_C 8
+
+# define L_CLICK 1
 //(X = 1,125 * y)
 # define WHITE 0xFFFFFF
 
@@ -74,6 +76,8 @@ typedef struct		s_fra
 	int				*rgb;
 	char			*s_alpha;
 	char			*s_imax;
+	int				mouse_x;
+	int				mouse_y;
 	t_color			pix;
 	t_mendel		m;
 }					t_fra;
@@ -91,6 +95,7 @@ void				init_mlx_mendelbrot(t_fra *e);
 void				init_mandelbrot(t_fra *e);
 void				reset_mandelbrot(t_fra *e);
 int					key_mandelbrot(int key, t_fra *e);
+int					key_mouse_mandelbrot(int key, int x, int y, t_fra *e);
 
 void				burninship(t_fra *e);
 
