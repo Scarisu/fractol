@@ -6,20 +6,24 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 13:03:19 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 06:48:18 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 08:34:19 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
 
-void	str_string(t_fra *e)
+void	str_string_mandebrot(t_fra *e)
 {
+	e->s_color = ft_itoa(e->c_on / 255 + 1);
 	e->s_alpha = ft_itoa(e->alpha);
 	e->s_imax = ft_itoa(e->m.imax);
-	mlx_string_put(e->mlx, e->win, 5, 5, WHITE, "alpha : ");
-	mlx_string_put(e->mlx, e->win, 80, 5, WHITE, e->s_alpha);
-	mlx_string_put(e->mlx, e->win, 5, 25, WHITE, "imax  : ");
-	mlx_string_put(e->mlx, e->win, 80, 25, WHITE, e->s_imax);
+	mlx_string_put(e->mlx, e->win, 5, 5, WHITE, "color : ");
+	mlx_string_put(e->mlx, e->win, 80, 5, WHITE, e->s_color);
+	mlx_string_put(e->mlx, e->win, 5, 25, WHITE, "alpha : ");
+	mlx_string_put(e->mlx, e->win, 80, 25, WHITE, e->s_alpha);
+	mlx_string_put(e->mlx, e->win, 5, 45, WHITE, "imax  : ");
+	mlx_string_put(e->mlx, e->win, 80, 45, WHITE, e->s_imax);
+	free(e->s_color);
 	free(e->s_alpha);
 	free(e->s_imax);
 }
@@ -54,7 +58,7 @@ void	mandelbrot(t_fra *e)
 		while (++e->m.y < Y)
 		{
 			calcul_mandelbrot(e);
-			e->rgb = hue_color((765 / e->m.imax) * e->m.i + e->color);
+			e->rgb = hue_color(e->c_on / e->m.imax * e->m.i + e->color);
 			if (e->m.i >= e->m.imax)
 				e->pix = get_color(0, 0, 0, 0);
 			else
@@ -66,7 +70,7 @@ void	mandelbrot(t_fra *e)
 	}
 	mlx_put_image_to_window(e->mlx, e->win, e->img, 0, 0);
 	if (e->s_on == 1)
-		str_string(e);
+		str_string_mandebrot(e);
 	mlx_hook(e->win, 2, 3, key_mandelbrot, e);
 	mlx_mouse_hook(e->win, key_mouse_mandelbrot, e);
 }
