@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 18:07:31 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/11 16:41:56 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 07:05:19 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void	all_black(t_fra *e)
 
 	ft_memcpy(xy, ((int[2]){-1, -1}), sizeof(int[2]));
 	e->pix = get_color(0, 0, 0, 0);
-	while(++xy[0] < X)
+	while (++xy[0] < X)
 	{
-		while(++xy[1] < Y)
+		while (++xy[1] < Y)
 			conv_img(xy[0], xy[1], e);
 		xy[1] = -1;
 	}

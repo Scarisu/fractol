@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 05:58:49 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 06:58:06 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,14 @@
 # define KEY_RIGHT 124
 # define KEY_UP 126
 # define KEY_DOWN 125
+# define KEY_CLEAR 71
+# define KEY_M 46
+# define KEY_N 45
 
 # define MOL_UP 5
 # define MOL_DOWN 4
 # define L_CLICK 1
-//(X = 1,125 * y)
+
 # define WHITE 0xFFFFFF
 
 # include "../libft/includes/libft.h"
@@ -82,8 +85,9 @@ typedef struct		s_fra
 	int				*rgb;
 	char			*s_alpha;
 	char			*s_imax;
-	long double		mouse_x;
-	long double		mouse_y;
+	int				s_on;
+	long double		ms_x;
+	long double		ms_y;
 	long double		zoom;
 	t_color			pix;
 	t_mendel		m;

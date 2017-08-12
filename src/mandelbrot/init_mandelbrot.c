@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:09:52 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 06:27:05 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 06:47:55 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	reset_mandelbrot(t_fra *e)
 	e->mul_imax = 5;
 	e->color = 0;
 	e->rgb = hue_color(0);
-	e->mouse_x = -2.1 + 0.5;
-	e->mouse_y = -1.2 + 0.5;
+	e->ms_x = -2.1 + 0.5;
+	e->ms_y = -1.2 + 0.5;
 }
 
 void	init_mlx_mendelbrot(t_fra *e)
@@ -31,6 +31,7 @@ void	init_mlx_mendelbrot(t_fra *e)
 	e->win = mlx_new_window(e->mlx, X, Y, e->name);
 	e->img = mlx_new_image(e->mlx, X, Y);
 	e->data = mlx_get_data_addr(e->img, &i, &i, &i);
+	e->s_on = 1;
 	reset_mandelbrot(e);
 }
 
@@ -46,5 +47,4 @@ void	init_mandelbrot(t_fra *e)
 	e->m.y = -1;
 	e->m.z_r = 0;
 	e->m.z_i = 0;
-
 }
