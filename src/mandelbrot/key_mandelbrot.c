@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:36:48 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 11:18:06 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 11:31:05 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int			key_mandelbrot(int key, t_fra *e)
 {
 	if (key == ESC)
 		exit(0);
-	else if (key == KEY_R || key == C_LEFT)
+	else if (key == KEY_TAB || key == C_LEFT)
 		reset_mandelbrot(e);
 	else if (key == PLU)
 		e->mul_imax += 1;

@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 10:57:40 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 11:30:33 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@
 # define KEY_M 46
 # define KEY_N 45
 # define KEY_V 9
+# define KEY_RET 36
+# define KEY_TAB 48
 
 # define MOL_UP 5
 # define MOL_DOWN 4

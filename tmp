@@ -8,10 +8,10 @@ clear = invi
 
 
 Fleches
-R = reset (left_b)
-Space = mouse (a)
+Tab = reset (left_b)
+return = mouse (a)
 M = zoom+ (LR)
 n = zoom- (LF)
-
+esc = exit (b / right_b)
 
 CP Thread
