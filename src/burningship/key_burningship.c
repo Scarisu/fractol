@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:33:59 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 10:12:02 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 11:17:48 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int			key_mouse_burningship(int key, int x, int y, t_fra *e)
 
 	tmp_mx = (long double)x;
 	tmp_my = (long double)y;
-	if (key == MOL_UP)
+	if (key == MOL_UP || key == C_LR)
 	{
 		e->ms_x += (tmp_mx / (X / (e->b.x2 - e->b.x1)) - 0.5) * e->zoom / 10;
 		e->ms_y += (tmp_my / (Y / (e->b.y2 - e->b.y1)) - 0.5) * e->zoom / 10;
 		e->zoom /= 1.1;
 	}
-	else if (key == MOL_DOWN && e->zoom < 1)
+	else if ((key == MOL_DOWN || key == C_LF) && e->zoom < 1)
 	{
 		e->ms_x -= (tmp_mx / (X / (e->b.x2 - e->b.x1)) - 0.5) * e->zoom / 10;
 		e->ms_y -= (tmp_my / (Y / (e->b.y2 - e->b.y1)) - 0.5) * e->zoom / 10;
@@ -69,7 +69,7 @@ int			key_burningship(int key, t_fra *e)
 {
 	if (key == ESC)
 		exit(0);
-	else if (key == KEY_R)
+	else if (key == KEY_R || key == C_LEFT)
 		reset_burningship(e);
 	else if (key == PLU)
 		e->mul_imax += 1;

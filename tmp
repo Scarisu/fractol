@@ -1,2 +1,17 @@
-A  -   c  FLECHES  R  clear   M  v
-Z  +						  n
+A = Alpha+
+Z = Alpha-
++ = imax+
+- = imax-
+c = couleur
+v = nombre couleur
+clear = invi
+
+
+Fleches
+R = reset (left_b)
+Space = mouse (a)
+M = zoom+ (LR)
+n = zoom- (LF)
+
+
+CP Thread

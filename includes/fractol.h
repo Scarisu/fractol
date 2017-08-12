@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 10:27:47 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 10:57:40 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@
 # define MOL_UP 5
 # define MOL_DOWN 4
 # define L_CLICK 1
+
+# define C_LEFT 48
+# define C_A 36
+# define C_LR 1
+# define C_LF 2
 
 # define WHITE 0xFFFFFF
 

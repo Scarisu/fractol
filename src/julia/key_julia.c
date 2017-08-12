@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:36:00 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 10:30:56 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 11:17:09 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ int			key_mouse_julia(int key, int x, int y, t_fra *e)
 
 	tmp_mx = (long double)x;
 	tmp_my = (long double)y;
-	if (key == MOL_UP)
+	if (key == MOL_UP || key == C_LR)
 	{
 		e->ms_x += (tmp_mx / (X / (e->j.x2 - e->j.x1)) - 0.5) * e->zoom / 10;
 		e->ms_y += (tmp_my / (Y / (e->j.y2 - e->j.y1)) - 0.5) * e->zoom / 10;
 		e->zoom /= 1.1;
 	}
-	else if (key == MOL_DOWN && e->zoom < 1)
+	else if ((key == MOL_DOWN || key == C_LF) && e->zoom < 1)
 	{
 		e->ms_x -= (tmp_mx / (X / (e->j.x2 - e->j.x1)) - 0.5) * e->zoom / 10;
 		e->ms_y -= (tmp_my / (Y / (e->j.y2 - e->j.y1)) - 0.5) * e->zoom / 10;
@@ -83,7 +83,7 @@ int			key_julia(int key, t_fra *e)
 {
 	if (key == ESC)
 		exit(0);
-	else if (key == KEY_R)
+	else if (key == KEY_R || key == C_LEFT)
 		reset_julia(e);
 	else if (key == PLU)
 		e->mul_imax += 1;
@@ -99,7 +99,7 @@ int			key_julia(int key, t_fra *e)
 		e->c_on += 255 * e->c_adj;
 	else if (key == KEY_CLEAR)
 		e->s_on *= -1;
-	else if (key == SPA)
+	else if (key == SPA || key == C_A)
 		e->lock *= -1;
 	position_julia(key, e);
 	adjust_value(e);

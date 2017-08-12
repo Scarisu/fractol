@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:12:01 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 10:29:52 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 10:58:50 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	reset_julia(t_fra *e)
 	e->ms_y = -1.2 + 0.5;
 	e->j.c_r = 0.285;
 	e->j.c_i = 0.01;
+	e->lock = -1;
 }
 
 void	init_mlx_julia(t_fra *e)
@@ -36,7 +37,6 @@ void	init_mlx_julia(t_fra *e)
 	e->img = mlx_new_image(e->mlx, X, Y);
 	e->data = mlx_get_data_addr(e->img, &i, &i, &i);
 	e->s_on = 1;
-	e->lock = -1;
 	reset_julia(e);
 }
 
