@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:14:58 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 08:34:57 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 10:40:19 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void	init_mlx_burningship(t_fra *e)
 
 void	init_burningship(t_fra *e)
 {
-	e->b.x1 = -2.1;
-	e->b.x2 = 0.6;
-	e->b.y1 = -1.2;
-	e->b.y2 = 1.2;
+	e->b.x1 = -2;
+	e->b.x2 = 0.5;
+	e->b.y1 = -1.1;
+	e->b.y2 = 1.1;
 	e->b.imax = 10 * e->mul_imax;
 	e->b.i = 0;
 	e->b.x = -1;
