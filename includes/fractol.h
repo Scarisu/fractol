@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 08:27:03 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 09:39:08 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,24 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <math.h>
+
+typedef struct		s_julia
+{
+	int				x;
+	int				y;
+	long double		i;
+	long double		imax;
+	long double		x1;
+	long double		x2;
+	long double		y1;
+	long double		y2;
+	long double		zoom_x;
+	long double		zoom_y;
+	long double		c_r;
+	long double		c_i;
+	long double		z_r;
+	long double		z_i;
+}					t_julia;
 
 typedef struct		s_bship
 {
@@ -111,9 +129,11 @@ typedef struct		s_fra
 	long double		ms_x;
 	long double		ms_y;
 	long double		zoom;
+	int				lock;
 	t_color			pix;
 	t_mendel		m;
 	t_bship			b;
+	t_julia			j;
 }					t_fra;
 
 void				conv_img(int x, int y, t_fra *e);
@@ -123,6 +143,13 @@ void				all_black(t_fra *e);
 int					*hue_color(int i);
 
 void				julia(t_fra *e);
+void				init_mlx_julia(t_fra *e);
+void				init_julia(t_fra *e);
+void				reset_julia(t_fra *e);
+int					key_julia(int key, t_fra *e);
+int					key_mouse_julia(int key, int x, int y, t_fra *e);
+int					motion_mouse_julia(int x, int y, t_fra *e);
+int					lock_mouse_julia(int key, t_fra *e);
 
 void				mandelbrot(t_fra *e);
 void				init_mlx_mendelbrot(t_fra *e);
