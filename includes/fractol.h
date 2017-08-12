@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 01:33:31 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 05:58:49 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,17 @@
 # define SPA 49
 # define PLU 69
 # define MIN 78
-# define UP 126
-# define DOW 125
 # define KEY_R 15
 # define KEY_C 8
+# define KEY_A 0
+# define KEY_Z 6
+# define KEY_LEFT 123
+# define KEY_RIGHT 124
+# define KEY_UP 126
+# define KEY_DOWN 125
 
+# define MOL_UP 5
+# define MOL_DOWN 4
 # define L_CLICK 1
 //(X = 1,125 * y)
 # define WHITE 0xFFFFFF
@@ -76,8 +82,9 @@ typedef struct		s_fra
 	int				*rgb;
 	char			*s_alpha;
 	char			*s_imax;
-	int				mouse_x;
-	int				mouse_y;
+	long double		mouse_x;
+	long double		mouse_y;
+	long double		zoom;
 	t_color			pix;
 	t_mendel		m;
 }					t_fra;

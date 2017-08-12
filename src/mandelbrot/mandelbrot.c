@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 13:03:19 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 01:28:18 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 06:30:59 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	str_string(t_fra *e)
 {
-	e->s_alpha = ft_itoa(e->m.i * e->alpha);
+	e->s_alpha = ft_itoa(e->alpha);
 	e->s_imax = ft_itoa(e->m.imax);
 	mlx_string_put(e->mlx, e->win, 5, 5, WHITE, "alpha : ");
 	mlx_string_put(e->mlx, e->win, 80, 5, WHITE, e->s_alpha);
@@ -28,8 +28,8 @@ void	calcul_mandelbrot(t_fra *e)
 {
 	long double		tmp;
 
-	e->m.c_r = e->m.x / e->m.zoom_x + e->m.x1;
-	e->m.c_i = e->m.y / e->m.zoom_y + e->m.y1;
+	e->m.c_r = (e->m.x / (X / (e->m.x2 - e->m.x1)) - 0.5) * e->zoom + e->mouse_x;
+	e->m.c_i = (e->m.y / (Y / (e->m.y2 - e->m.y1)) - 0.5) * e->zoom + e->mouse_y;
 	e->m.z_r = 0;
 	e->m.z_i = 0;
 	e->m.i = 0;
@@ -52,12 +52,15 @@ void	mandelbrot(t_fra *e)
 		e->m.y = -1;
 		while (++e->m.y < Y)
 		{
+
 			calcul_mandelbrot(e);
-			if (e->m.i == e->m.imax)
+			if (e->m.i >= e->m.imax)
 				e->pix = get_color(0, 0, 0, 0);
 			else
 					e->pix = get_color(e->rgb[0], e->rgb[1], e->rgb[2],
 						e->m.i * e->alpha);
+			e->rgb = hue_color((765 / e->m.imax) * e->m.i + e->color);
+			e->m.imax = 10 * e->mul_imax - log(e->zoom * 4);
 			conv_img(e->m.x, e->m.y, e);
 		}
 	}

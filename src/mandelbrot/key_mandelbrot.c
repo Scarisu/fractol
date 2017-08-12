@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:36:48 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 01:33:41 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 06:27:32 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,33 @@
 
 int		key_mouse_mandelbrot(int key, int x, int y, t_fra *e)
 {
-	(void)key;
-	if (key == L_CLICK)
+	long double		tmp_mx;
+	long double		tmp_my;
+
+	tmp_mx = (long double)x;
+	tmp_my = (long double)y;
+	if (key == MOL_UP)
 	{
-		e->mouse_x = x;
-		e->mouse_y = y;
+		e->mouse_x += (tmp_mx / (X / (e->m.x2 - e->m.x1)) - 0.5) * e->zoom / 10;
+		e->mouse_y += (tmp_my / (Y / (e->m.y2 - e->m.y1)) - 0.5) * e->zoom / 10;
+		e->zoom /= 1.1;
 	}
-	printf("[%d][%d]\n", e->mouse_x, e->mouse_y);
+	else if (key == MOL_DOWN)
+	{
+		e->mouse_x -= (tmp_mx / (X / (e->m.x2 - e->m.x1)) - 0.5) * e->zoom / 10;
+		e->mouse_y -= (tmp_my / (Y / (e->m.y2 - e->m.y1)) - 0.5) * e->zoom / 10;
+		e->zoom /= 0.9;
+	}
+	all_black(e);
+	mandelbrot(e);
 	return (0);
 }
 
 void	adjust_value(t_fra *e)
 {
-	if (e->m.i * e->alpha == 510)
+	if (e->alpha == 510)
 		e->alpha = 0;
-	else if (e->m.i * e->alpha == -2)
+	else if (e->alpha == -2)
 		e->alpha = 254;
 	else if (e->mul_imax == 0)
 		e->mul_imax += 1;
@@ -46,13 +58,20 @@ int		key_mandelbrot(int key, t_fra *e)
 		e->mul_imax += 1;
 	else if (key == MIN)
 		e->mul_imax -= 1;
-	else if (key == UP)
-		e->alpha += 1;
-	else if (key == DOW)
-		e->alpha -= 1;
+	else if (key == KEY_A)
+		e->alpha += 2;
+	else if (key == KEY_Z)
+		e->alpha -= 2;
 	else if (key == KEY_C)
-		e->color += 10;
-	//printf("%d - %.1Lf - %.1LF - %.1LF\n", key, e->zoom, e->m.zoom_y, e->m.zoom_x);
+		e->color += 25;
+	else if (key == KEY_LEFT)
+		e->mouse_x += (e->m.x / (X / (e->m.x2 - e->m.x1)) - 0.5) * e->zoom / 10;
+	else if (key == KEY_RIGHT)
+		e->mouse_x -= (e->m.x / (X / (e->m.x2 - e->m.x1)) - 0.5) * e->zoom / 10;
+	else if (key == KEY_UP)
+		e->mouse_y += (e->m.y / (Y / (e->m.y2 - e->m.y1)) - 0.5) * e->zoom / 10;
+	else if (key == KEY_DOWN)
+		e->mouse_y -= (e->m.y / (Y / (e->m.y2 - e->m.y1)) - 0.5) * e->zoom / 10;
 	adjust_value(e);
 	all_black(e);
 	mandelbrot(e);
