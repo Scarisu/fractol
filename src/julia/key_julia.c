@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:36:00 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 09:53:51 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 10:30:56 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,17 @@
 
 int			motion_mouse_julia(int x, int y, t_fra *e)
 {
-	long double		tmp_X;
-	long double		tmp_Y;
+	long double		win_size[2];
 
-	tmp_X = X;
-	tmp_Y = Y;
+	ft_memcpy(win_size, ((long double[2]){X, Y}), sizeof(long double[2]));
 	if (e->lock == 1)
 	{
-		e->j.c_r = x / tmp_X;
-		e->j.c_i = y / tmp_Y;
+		e->j.c_r = x / win_size[0];
+		e->j.c_i = y / win_size[1];
 	}
 	julia(e);
 	return (0);
 }
-
 
 int			key_mouse_julia(int key, int x, int y, t_fra *e)
 {
@@ -54,7 +51,7 @@ int			key_mouse_julia(int key, int x, int y, t_fra *e)
 
 static void	adjust_value(t_fra *e)
 {
-	if (e->alpha == 510)
+	if (e->alpha == 256)
 		e->alpha = 0;
 	else if (e->alpha == -2)
 		e->alpha = 254;
@@ -104,7 +101,6 @@ int			key_julia(int key, t_fra *e)
 		e->s_on *= -1;
 	else if (key == SPA)
 		e->lock *= -1;
-	printf("%d\n", e->lock);
 	position_julia(key, e);
 	adjust_value(e);
 	julia(e);

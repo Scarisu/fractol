@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:12:01 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 09:45:28 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 10:29:52 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	init_mlx_julia(t_fra *e)
 
 void	init_julia(t_fra *e)
 {
+	all_black(e);
 	e->j.x1 = -1;
 	e->j.x2 = 1;
 	e->j.y1 = -1.2;
@@ -50,5 +51,4 @@ void	init_julia(t_fra *e)
 	e->j.i = 0;
 	e->j.x = -1;
 	e->j.y = -1;
-
 }

@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:33:59 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 08:39:54 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 10:12:02 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int			key_mouse_burningship(int key, int x, int y, t_fra *e)
 
 static void	adjust_value(t_fra *e)
 {
-	if (e->alpha == 510)
+	if (e->alpha == 256)
 		e->alpha = 0;
 	else if (e->alpha == -2)
 		e->alpha = 254;

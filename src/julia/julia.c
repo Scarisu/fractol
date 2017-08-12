@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 13:03:11 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 09:45:27 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/12 10:29:47 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,7 @@ void	julia(t_fra *e)
 {
 	if (!e->win)
 		init_mlx_julia(e);
-	all_black(e);
 	init_julia(e);
-
 	while (++e->j.x < X)
 	{
 		e->j.y = -1;
