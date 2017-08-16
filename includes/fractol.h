@@ -6,15 +6,15 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 11:30:33 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/16 12:32:06 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define X 864
-# define Y 768
+# define X 675
+# define Y 600
 # define ESC 53
 # define SPA 49
 # define PLU 69

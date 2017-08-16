@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:36:00 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 11:33:56 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/16 12:57:48 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,6 @@ static void	adjust_value(t_fra *e)
 		e->mul_imax += 1;
 	else if (e->color >= 1530)
 		e->color -= 1530;
-	else if (e->c_on == 5355 || e->c_on == 0)
-		e->c_adj *= -1;
 }
 
 void		position_julia(int key, t_fra *e)
@@ -77,6 +75,10 @@ void		position_julia(int key, t_fra *e)
 		key_mouse_julia(MOL_UP, X / 2, Y / 2, e);
 	else if (key == KEY_N)
 		key_mouse_julia(MOL_DOWN, X / 2, Y / 2, e);
+	else if (key == PLU)
+		e->mul_imax += 1;
+	else if (key == MIN)
+		e->mul_imax -= 1;
 }
 
 int			key_julia(int key, t_fra *e)
@@ -85,10 +87,6 @@ int			key_julia(int key, t_fra *e)
 		exit(0);
 	else if (key == KEY_TAB || key == C_LEFT)
 		reset_julia(e);
-	else if (key == PLU)
-		e->mul_imax += 1;
-	else if (key == MIN)
-		e->mul_imax -= 1;
 	else if (key == KEY_A)
 		e->alpha += 2;
 	else if (key == KEY_Z)
@@ -96,7 +94,11 @@ int			key_julia(int key, t_fra *e)
 	else if (key == KEY_C)
 		e->color += 25;
 	else if (key == KEY_V)
+	{
 		e->c_on += 255 * e->c_adj;
+		if (e->c_on == 5355 || e->c_on == 0)
+			e->c_adj *= -1;
+	}
 	else if (key == KEY_CLEAR)
 		e->s_on *= -1;
 	else if (key == KEY_RET || key == C_A)
