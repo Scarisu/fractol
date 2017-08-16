@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*   celtic_mandelbrot.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/07 13:03:19 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/16 18:31:51 by pbernier         ###   ########.fr       */
+/*   Created: 2017/08/16 18:05:03 by pbernier          #+#    #+#             */
+/*   Updated: 2017/08/16 18:12:55 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
 
-void	str_string_mandelbrot(t_fra *e)
-{
-	e->s_color = ft_itoa(e->c_on / 255 + 1);
-	e->s_alpha = ft_itoa(e->alpha);
-	e->s_imax = ft_itoa(e->m.imax);
-	mlx_string_put(e->mlx, e->win, 5, 5, WHITE, "color : ");
-	mlx_string_put(e->mlx, e->win, 80, 5, WHITE, e->s_color);
-	mlx_string_put(e->mlx, e->win, 5, 25, WHITE, "alpha : ");
-	mlx_string_put(e->mlx, e->win, 80, 25, WHITE, e->s_alpha);
-	mlx_string_put(e->mlx, e->win, 5, 45, WHITE, "imax  : ");
-	mlx_string_put(e->mlx, e->win, 80, 45, WHITE, e->s_imax);
-	free(e->s_color);
-	free(e->s_alpha);
-	free(e->s_imax);
-}
-
-void	calcul_mandelbrot(t_fra *e)
+void	calcul_celtic_mandelbrot(t_fra *e)
 {
 	long double		tmp;
 
@@ -40,13 +24,13 @@ void	calcul_mandelbrot(t_fra *e)
 	while (e->m.z_r * e->m.z_r + e->m.z_i * e->m.z_i < 4 && e->m.i < e->m.imax)
 	{
 		tmp = e->m.z_r;
-		e->m.z_r = e->m.z_r * e->m.z_r - e->m.z_i * e->m.z_i + e->m.c_r;
+		e->m.z_r = fabsl(e->m.z_r * e->m.z_r - e->m.z_i * e->m.z_i) + e->m.c_r;
 		e->m.z_i = 2 * e->m.z_i * tmp + e->m.c_i;
 		e->m.i++;
 	}
 }
 
-void	mandelbrot(t_fra *e)
+void	celtic_mandelbrot(t_fra *e)
 {
 	if (!e->win)
 		init_mlx_mandelbrot(e);
@@ -57,13 +41,13 @@ void	mandelbrot(t_fra *e)
 		e->m.y = -1;
 		while (++e->m.y < Y)
 		{
-			calcul_mandelbrot(e);
+			calcul_celtic_mandelbrot(e);
 			e->rgb = hue_color(e->c_on / e->m.imax * e->m.i + e->color);
 			if (e->m.i >= e->m.imax)
 				e->pix = get_color(0, 0, 0, 0);
 			else
 				e->pix = get_color(e->rgb[0], e->rgb[1], e->rgb[2],
-						e->m.i * e->alpha);
+					e->m.i * e->alpha);
 			e->m.imax = 10 * e->mul_imax - log(e->zoom * 4);
 			conv_img(e->m.x, e->m.y, e);
 		}

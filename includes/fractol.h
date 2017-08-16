@@ -6,15 +6,15 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/16 12:32:06 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/16 18:25:49 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define X 675
-# define Y 600
+# define X 900
+# define Y 800
 # define ESC 53
 # define SPA 49
 # define PLU 69
@@ -72,24 +72,6 @@ typedef struct		s_julia
 	long double		z_i;
 }					t_julia;
 
-typedef struct		s_bship
-{
-	int				x;
-	int				y;
-	long double		i;
-	long double		imax;
-	long double		x1;
-	long double		x2;
-	long double		y1;
-	long double		y2;
-	long double		zoom_x;
-	long double		zoom_y;
-	long double		c_r;
-	long double		c_i;
-	long double		z_r;
-	long double		z_i;
-}					t_bship;
-
 typedef struct		s_mendel
 {
 	int				x;
@@ -139,9 +121,10 @@ typedef struct		s_fra
 	int				lock;
 	t_color			pix;
 	t_mendel		m;
-	t_bship			b;
 	t_julia			j;
 }					t_fra;
+
+void				restart_key(t_fra *e);
 
 void				conv_img(int x, int y, t_fra *e);
 
@@ -159,17 +142,16 @@ int					motion_mouse_julia(int x, int y, t_fra *e);
 int					lock_mouse_julia(int key, t_fra *e);
 
 void				mandelbrot(t_fra *e);
-void				init_mlx_mendelbrot(t_fra *e);
+void				init_mlx_mandelbrot(t_fra *e);
 void				init_mandelbrot(t_fra *e);
 void				reset_mandelbrot(t_fra *e);
+void				str_string_mandelbrot(t_fra *e);
 int					key_mandelbrot(int key, t_fra *e);
 int					key_mouse_mandelbrot(int key, int x, int y, t_fra *e);
 
 void				burningship(t_fra *e);
-void				init_mlx_burningship(t_fra *e);
-void				init_burningship(t_fra *e);
-void				reset_burningship(t_fra *e);
-int					key_burningship(int key, t_fra *e);
-int					key_mouse_burningship(int key, int x, int y, t_fra *e);
+void				celtic_mandelbrot(t_fra *e);
+void				mandelbar(t_fra *e);
+void				celtic_mandelbar(t_fra *e);
 
 #endif

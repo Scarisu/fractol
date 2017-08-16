@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:36:48 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/16 12:59:30 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/16 18:35:56 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int			key_mouse_mandelbrot(int key, int x, int y, t_fra *e)
 		e->ms_y -= (tmp_my / (Y / (e->m.y2 - e->m.y1)) - 0.5) * e->zoom / 10;
 		e->zoom /= 0.9;
 	}
-	mandelbrot(e);
+	restart_key(e);
 	return (0);
 }
 
@@ -89,6 +89,6 @@ int			key_mandelbrot(int key, t_fra *e)
 		e->s_on *= -1;
 	position_mandelbrot(key, e);
 	adjust_value(e);
-	mandelbrot(e);
+	restart_key(e);
 	return (0);
 }

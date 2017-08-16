@@ -6,7 +6,7 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:32:35 by pbernier          #+#    #+#              #
-#    Updated: 2017/08/09 17:51:46 by pbernier         ###   ########.fr        #
+#    Updated: 2017/08/16 18:25:36 by pbernier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,10 @@ SRC				=	fractol.c \
 					mandelbrot/init_mandelbrot.c \
 					mandelbrot/key_mandelbrot.c \
 					mandelbrot/mandelbrot.c \
-					burningship/init_burningship.c \
-					burningship/key_burningship.c \
-					burningship/burningship.c
+					mandel_dec/burningship.c \
+					mandel_dec/celtic_mandelbrot.c \
+					mandel_dec/mandelbar.c \
+					mandel_dec/celtic_mandelbar.c
 SIERRA			=
 OBJ				=	$(addprefix $(BINDIR),$(SRC:.c=.o))
 LIB				=	libft/libft.a \
@@ -53,7 +54,7 @@ $(BINDIR):
 	@mkdir bin
 	@mkdir bin/julia
 	@mkdir bin/mandelbrot
-	@mkdir bin/burningship
+	@mkdir bin/mandel_dec
 
 
 clean:

@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:09:52 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 08:56:27 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/16 17:45:18 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	reset_mandelbrot(t_fra *e)
 	e->ms_y = -1.2 + 0.5;
 }
 
-void	init_mlx_mendelbrot(t_fra *e)
+void	init_mlx_mandelbrot(t_fra *e)
 {
 	int				i;
 
