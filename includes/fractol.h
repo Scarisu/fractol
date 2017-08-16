@@ -13,8 +13,8 @@
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define X 900
-# define Y 800
+# define X 675
+# define Y 600
 # define ESC 53
 # define SPA 49
 # define PLU 69

@@ -14,6 +14,7 @@
 
 void		restart_key(t_fra *e)
 {
+	printf("%d - %s\n", ft_strcmp(e->name, "celtic_mandelbar"), e->name);
 	if (ft_strcmp(e->name, "mandelbrot") == 0)
 		mandelbrot(e);
 	else if (ft_strcmp(e->name, "burningship") == 0)
@@ -22,7 +23,7 @@ void		restart_key(t_fra *e)
 		celtic_mandelbrot(e);
 	else if (ft_strcmp(e->name, "mandelbar") == 0)
 		mandelbar(e);
-	if (ft_strcmp(e->name, "celtic_mandelbar") == 0)
+	else if (ft_strcmp(e->name, "celtic_mandelbar") == 0)
 	 	celtic_mandelbar(e);
 }
 

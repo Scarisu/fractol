@@ -10,18 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   mandelbar.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/16 18:17:53 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/16 18:21:33 by pbernier         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <fractol.h>
 
 void	calcul_celtic_mandelbar(t_fra *e)
@@ -36,8 +24,8 @@ void	calcul_celtic_mandelbar(t_fra *e)
 	while (e->m.z_r * e->m.z_r + e->m.z_i * e->m.z_i < 4 && e->m.i < e->m.imax)
 	{
 		tmp = e->m.z_r;
-		e->m.z_r = e->m.z_r * e->m.z_r - e->m.z_i * e->m.z_i + e->m.c_r;
-		e->m.z_i = 2 * e->m.z_i * tmp + e->m.c_i;
+		e->m.z_r = fabsl(e->m.z_r * e->m.z_r - e->m.z_i * e->m.z_i) + e->m.c_r;
+		e->m.z_i = -2 * e->m.z_i * tmp + e->m.c_i;
 		e->m.i++;
 	}
 }
@@ -53,7 +41,7 @@ void	celtic_mandelbar(t_fra *e)
 		e->m.y = -1;
 		while (++e->m.y < Y)
 		{
-			celtic_mandelbar(e);
+			calcul_celtic_mandelbar(e);
 			e->rgb = hue_color(e->c_on / e->m.imax * e->m.i + e->color);
 			if (e->m.i >= e->m.imax)
 				e->pix = get_color(0, 0, 0, 0);
