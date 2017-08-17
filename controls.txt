@@ -1,20 +1,33 @@
-A = Alpha+
-Z = Alpha-
-+ = imax+
-- = imax-
-c = couleur
-v = nombre couleur
-clear = invi
+
+   { Keybord }								{ Numeric keypad }
+
+  [A] 	= Alpha +						[+] = Imax +
+  [Z] 	= Alpha -						[-] = Imax -
+  [C] 	= Change color
+  [V] 	= Color number					[1] = mandelbrot
+[clear] = Hide interface				[2] = julia
+  										[3] = burningship
+  [M] 	= Zoom in (centre)				[4] = celtic_mandelbrot
+  [N] 	= Zoom out (centre)				[5] = mandelbar
+  										[6] = celtic_mandelbar
+ [TAB]	= Reset all						[7]	= cubic_burningship
+  [Q]	= Reset position				[8] = perpendicular_mandelbrot
+  										[9] = heart_mandelbrot
+  [UP] 	= Move up
+  [DW]	= Move down
+  [RT]	= Move right							  { Mouse }
+  [LT]	= Move left
+ 									[RT.c] | [Sc.Dw] = Zoom out (mouse)
+ [ret.] = ms. mov. (julia)			[LT.c] | [Sc.Up] = Zoom in (mouse)
+  [ESC] = close
 
 
-Fleches
-Tab = reset (left_b)
-return = mouse (a)
-M = zoom+ central (LR)
-n = zoom- central(LF)
-esc = exit (b / right_b)
+					{ Controller }
 
-CP Thread
-
-
-nom de la fenetre changeant
+ [Jk.UP] = Move up
+ [Jk.DW] = Move down			[LT.b]   = Reset position
+ [Jk.RT] = Move right		  [RT.b] | [B] = close
+ [Jk.LT] = Move left
+								[RT.g]   = Zoom in (mouse)
+  Pad] = mouse					[LT.g]	 = Zoom out (mouse)
+  [A]  = ms. mov. (julia)
