@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:12:01 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 14:38:23 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 17:54:53 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	init_mlx_julia(t_fra *e)
 	int				i;
 
 	e->mlx = mlx_init();
-	e->win = mlx_new_window(e->mlx, X, Y, e->name);
+	e->win = mlx_new_window(e->mlx, X, Y, "fractol");
 	e->img = mlx_new_image(e->mlx, X, Y);
 	e->data = mlx_get_data_addr(e->img, &i, &i, &i);
 	e->s_on = 1;

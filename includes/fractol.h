@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 16:33:29 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 17:12:03 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,48 +15,10 @@
 
 # define X 731
 # define Y 650
-# define ESC 53
-# define SPA 49
-# define PLU 69
-# define MIN 78
-# define KEY_R 15
-# define KEY_C 8
-# define KEY_A 0
-# define KEY_Z 6
-# define KEY_T 17
-# define KEY_Q 12
-# define KEY_LEFT 123
-# define KEY_RIGHT 124
-# define KEY_UP 126
-# define KEY_DOWN 125
-# define KEY_CLEAR 71
-# define KEY_M 46
-# define KEY_N 45
-# define KEY_V 9
-# define KEY_RET 36
-# define KEY_TAB 48
-# define KEY_1 83
-# define KEY_2 84
-# define KEY_3 85
-# define KEY_4 86
-# define KEY_5 87
-# define KEY_6 88
-# define KEY_7 89
-# define KEY_8 91
-# define KEY_9 92
-
-
-# define MOL_UP 5
-# define MOL_DOWN 4
-# define L_CLICK 1
-
-# define C_LEFT 48
-# define C_A 36
-# define C_LR 1
-# define C_LF 2
 
 # define WHITE 0xFFFFFF
 
+# include "define_key.h"
 # include "../libft/includes/libft.h"
 # include "../minilibx_macos/mlx.h"
 # include <sys/types.h>

@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 13:03:11 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 15:05:57 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 18:00:19 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@ void	str_string_julia(t_fra *e)
 	e->s_color = ft_itoa(e->c_on / 255 + 1);
 	e->s_alpha = ft_itoa(e->alpha);
 	e->s_imax = ft_itoa(e->j.imax);
-	mlx_string_put(e->mlx, e->win, 5, 5, WHITE, "color : ");
-	mlx_string_put(e->mlx, e->win, 80, 5, WHITE, e->s_color);
-	mlx_string_put(e->mlx, e->win, 5, 25, WHITE, "alpha : ");
-	mlx_string_put(e->mlx, e->win, 80, 25, WHITE, e->s_alpha);
-	mlx_string_put(e->mlx, e->win, 5, 45, WHITE, "imax  : ");
-	mlx_string_put(e->mlx, e->win, 80, 45, WHITE, e->s_imax);
+	mlx_string_put(e->mlx, e->win, 5, 5, WHITE, "fracal : ");
+	mlx_string_put(e->mlx, e->win, 90, 5, WHITE, e->name);
+	mlx_string_put(e->mlx, e->win, 5, 25, WHITE, "color  : ");
+	mlx_string_put(e->mlx, e->win, 90, 25, WHITE, e->s_color);
+	mlx_string_put(e->mlx, e->win, 5, 45, WHITE, "alpha  : ");
+	mlx_string_put(e->mlx, e->win, 90, 45, WHITE, e->s_alpha);
+	mlx_string_put(e->mlx, e->win, 5, 65, WHITE, "imax   : ");
+	mlx_string_put(e->mlx, e->win, 90, 65, WHITE, e->s_imax);
 	free(e->s_color);
 	free(e->s_alpha);
 	free(e->s_imax);

@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:09:52 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 15:54:48 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 17:51:03 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	init_mlx_mandelbrot(t_fra *e)
 	int				i;
 
 	e->mlx = mlx_init();
-	e->win = mlx_new_window(e->mlx, X, Y, e->name);
+	e->win = mlx_new_window(e->mlx, X, Y, "fractol");
 	e->img = mlx_new_image(e->mlx, X, Y);
 	e->data = mlx_get_data_addr(e->img, &i, &i, &i);
 	e->s_on = 1;
