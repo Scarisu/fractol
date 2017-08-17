@@ -6,31 +6,45 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 18:07:31 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 12:30:41 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 13:37:01 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
-
-void		restart_key(t_fra *e)
+void	change_fractol(int key, t_fra *e)
 {
-	if (ft_strcmp(e->name, "mandelbrot") == 0)
-		mandelbrot(e);
-	else if (ft_strcmp(e->name, "burningship") == 0)
-		burningship(e);
-	else if (ft_strcmp(e->name, "celtic_mandelbrot") == 0)
-		celtic_mandelbrot(e);
-	else if (ft_strcmp(e->name, "mandelbar") == 0)
-		mandelbar(e);
-	else if (ft_strcmp(e->name, "celtic_mandelbar") == 0)
-	 	celtic_mandelbar(e);
-	else if (ft_strcmp(e->name, "cubic_burningship") == 0)
-		cubic_burningship(e);
-	else if (ft_strcmp(e->name, "perpendicular_mandelbrot") == 0)
-		perpendicular_mandelbrot(e);
-	else if (ft_strcmp(e->name, "heart_mandelbrot") == 0)
-		heart_mandelbrot(e);
+	e->name = (key == KEY_1) ? "mandelbrot" : e->name;
+	e->name = (key == KEY_2) ? "julia" : e->name;
+	e->name = (key == KEY_3) ? "burningship" : e->name;
+	e->name = (key == KEY_4) ? "celtic_mandelbrot" : e->name;
+	e->name = (key == KEY_5) ? "mandelbar" : e->name;
+	e->name = (key == KEY_6) ? "celtic_mandelbar" : e->name;
+	e->name = (key == KEY_7) ? "cubic_burningship" : e->name;
+	e->name = (key == KEY_8) ? "perpendicular_mandelbrot" : e->name;
+	e->name = (key == KEY_9) ? "heart_mandelbrot" : e->name;
+}
 
+void	restart_key(int key, t_fra *e)
+{
+	change_fractol(key, e);
+	if (!(ft_strcmp(e->name, "mandelbrot")))
+		mandelbrot(e);
+	else if (!(ft_strcmp(e->name, "julia")))
+		julia(e);
+	else if (!(ft_strcmp(e->name, "burningship")))
+		burningship(e);
+	else if (!(ft_strcmp(e->name, "celtic_mandelbrot")))
+		celtic_mandelbrot(e);
+	else if (!(ft_strcmp(e->name, "mandelbar")))
+		mandelbar(e);
+	else if (!(ft_strcmp(e->name, "celtic_mandelbar")))
+		celtic_mandelbar(e);
+	else if (!(ft_strcmp(e->name, "cubic_burningship")))
+		cubic_burningship(e);
+	else if (!(ft_strcmp(e->name, "perpendicular_mandelbrot")))
+		perpendicular_mandelbrot(e);
+	else if (!(ft_strcmp(e->name, "heart_mandelbrot")))
+		heart_mandelbrot(e);
 }
 
 void	my_error(int nb, t_fra e)
@@ -42,9 +56,9 @@ void	my_error(int nb, t_fra e)
 	}
 	if (nb <= 1)
 	{
-		ft_putstr("usage : ./fractol julia | mandelbrot | ");
-		ft_putstr("burningship | celtic_mandelbrot | mandelbar | ");
-		ft_putstr("celtic_mandelbar | cubic_burningship | ");
+		ft_putstr("usage : ./fractol\nmandelbrot | julia | ");
+		ft_putstr("burningship\nceltic_mandelbrot | mandelbar\n");
+		ft_putstr("celtic_mandelbar | cubic_burningship\n");
 		ft_putstr("perpendicular_mandelbrot | heart_mandelbrot\n");
 	}
 	exit(0);

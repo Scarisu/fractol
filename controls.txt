@@ -1,0 +1,17 @@
+A = Alpha+
+Z = Alpha-
++ = imax+
+- = imax-
+c = couleur
+v = nombre couleur
+clear = invi
+
+
+Fleches
+Tab = reset (left_b)
+return = mouse (a)
+M = zoom+ central (LR)
+n = zoom- central(LF)
+esc = exit (b / right_b)
+
+CP Thread

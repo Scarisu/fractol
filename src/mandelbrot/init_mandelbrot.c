@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:09:52 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/16 17:45:18 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 12:56:12 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	init_mlx_mandelbrot(t_fra *e)
 
 void	init_mandelbrot(t_fra *e)
 {
+	all_black(e);
 	e->m.x1 = -2.1;
 	e->m.x2 = 0.6;
 	e->m.y1 = -1.2;

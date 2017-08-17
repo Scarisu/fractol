@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 13:03:19 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/16 18:31:51 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 12:56:57 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	mandelbrot(t_fra *e)
 {
 	if (!e->win)
 		init_mlx_mandelbrot(e);
-	all_black(e);
 	init_mandelbrot(e);
 	while (++e->m.x < X)
 	{

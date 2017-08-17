@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 13:03:11 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/12 10:29:47 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 13:08:12 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	julia(t_fra *e)
 {
 	if (!e->win)
 		init_mlx_julia(e);
+	e->name = "julia";
 	init_julia(e);
 	while (++e->j.x < X)
 	{
@@ -66,8 +67,7 @@ void	julia(t_fra *e)
 		}
 	}
 	mlx_put_image_to_window(e->mlx, e->win, e->img, 0, 0);
-	if (e->s_on == 1)
-		str_string_julia(e);
+	e->s_on == 1 ? str_string_julia(e) : 0;
 	mlx_hook(e->win, 2, 3, key_julia, e);
 	mlx_hook(e->win, 6, (1L << 6), motion_mouse_julia, e);
 	mlx_mouse_hook(e->win, key_mouse_julia, e);

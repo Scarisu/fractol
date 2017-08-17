@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/17 11:58:15 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 12:10:28 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 13:08:58 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	calcul_cubic_burningship(t_fra *e)
 	while (e->m.z_r * e->m.z_r + e->m.z_i * e->m.z_i < 4 && e->m.i < e->m.imax)
 	{
 		tmp = e->m.z_r;
-
 		e->m.z_r = (e->m.z_r * e->m.z_r - (e->m.z_i * e->m.z_i * 3)) *
 			fabsl(e->m.z_r) + e->m.c_r;
 		e->m.z_i = ((tmp * tmp * 3) - e->m.z_i * e->m.z_i) *
@@ -37,7 +36,7 @@ void	cubic_burningship(t_fra *e)
 {
 	if (!e->win)
 		init_mlx_mandelbrot(e);
-	all_black(e);
+	e->name = "cubic_burningship";
 	init_mandelbrot(e);
 	while (++e->m.x < X)
 	{

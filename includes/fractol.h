@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 12:33:07 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 13:26:00 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,16 @@
 # define KEY_V 9
 # define KEY_RET 36
 # define KEY_TAB 48
+# define KEY_1 83
+# define KEY_2 84
+# define KEY_3 85
+# define KEY_4 86
+# define KEY_5 87
+# define KEY_6 88
+# define KEY_7 89
+# define KEY_8 91
+# define KEY_9 92
+
 
 # define MOL_UP 5
 # define MOL_DOWN 4
@@ -124,7 +134,7 @@ typedef struct		s_fra
 	t_julia			j;
 }					t_fra;
 
-void				restart_key(t_fra *e);
+void				restart_key(int key, t_fra *e);
 
 void				conv_img(int x, int y, t_fra *e);
 
