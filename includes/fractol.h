@@ -6,15 +6,15 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 12:19:27 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 12:33:07 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define X 675
-# define Y 600
+# define X 800
+# define Y 700
 # define ESC 53
 # define SPA 49
 # define PLU 69
@@ -155,5 +155,6 @@ void				mandelbar(t_fra *e);
 void				celtic_mandelbar(t_fra *e);
 void				cubic_burningship(t_fra *e);
 void				perpendicular_mandelbrot(t_fra *e);
+void				heart_mandelbrot(t_fra *e);
 
 #endif
