@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:36:48 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 14:09:51 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 14:55:36 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@ int			key_mouse_mandelbrot(int key, int x, int y, t_fra *e)
 	long double		tmp_mx;
 	long double		tmp_my;
 
+	printf("%d - %d\n", x, y);
 	tmp_mx = (long double)x;
 	tmp_my = (long double)y;
-	if (key == MOL_UP || key == C_LR)
+	if ((key == MOL_UP || key == C_LR) && y > 0)
 	{
 		e->ms_x += (tmp_mx / (X / (e->m.x2 - e->m.x1)) - 0.5) * e->zoom / 10;
 		e->ms_y += (tmp_my / (Y / (e->m.y2 - e->m.y1)) - 0.5) * e->zoom / 10;
 		e->zoom /= 1.1;
 	}
-	else if ((key == MOL_DOWN || key == C_LF) && e->zoom < 1)
+	else if ((key == MOL_DOWN || key == C_LF) && y > 0 && e->zoom < 1)
 	{
 		e->ms_x -= (tmp_mx / (X / (e->m.x2 - e->m.x1)) - 0.5) * e->zoom / 10;
 		e->ms_y -= (tmp_my / (Y / (e->m.y2 - e->m.y1)) - 0.5) * e->zoom / 10;
@@ -65,6 +66,8 @@ void		position_mandelbrot(int key, t_fra *e)
 		e->mul_imax += 1;
 	else if (key == MIN)
 		e->mul_imax -= 1;
+	else if (key == KEY_Q)
+		reset_mandelbrot_mini(e);
 }
 
 int			key_mandelbrot(int key, t_fra *e)

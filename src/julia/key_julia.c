@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:36:00 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 14:09:49 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 14:55:26 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int			motion_mouse_julia(int x, int y, t_fra *e)
 	ft_memcpy(win_size, ((long double[2]){X, Y}), sizeof(long double[2]));
 	if (e->lock == 1)
 	{
-		e->j.c_r = x / win_size[0];
-		e->j.c_i = y / win_size[1];
+		e->j.c_r = (x - win_size[0] / 2) / (win_size[0] / 2);
+		e->j.c_i = -((y - win_size[1] / 2) / (win_size[1] / 2));
 	}
 	restart_key(-1, e);
 	return (0);
@@ -33,13 +33,13 @@ int			key_mouse_julia(int key, int x, int y, t_fra *e)
 
 	tmp_mx = (long double)x;
 	tmp_my = (long double)y;
-	if (key == MOL_UP || key == C_LR)
+	if ((key == MOL_UP || key == C_LR) && y > 0)
 	{
 		e->ms_x += (tmp_mx / (X / (e->j.x2 - e->j.x1)) - 0.5) * e->zoom / 10;
 		e->ms_y += (tmp_my / (Y / (e->j.y2 - e->j.y1)) - 0.5) * e->zoom / 10;
 		e->zoom /= 1.1;
 	}
-	else if ((key == MOL_DOWN || key == C_LF) && e->zoom < 1)
+	else if ((key == MOL_DOWN || key == C_LF) && y > 0 && e->zoom < 1)
 	{
 		e->ms_x -= (tmp_mx / (X / (e->j.x2 - e->j.x1)) - 0.5) * e->zoom / 10;
 		e->ms_y -= (tmp_my / (Y / (e->j.y2 - e->j.y1)) - 0.5) * e->zoom / 10;
@@ -79,6 +79,8 @@ void		position_julia(int key, t_fra *e)
 		e->mul_imax += 1;
 	else if (key == MIN)
 		e->mul_imax -= 1;
+	else if (key == KEY_Q)
+		reset_julia_mini(e);
 }
 
 int			key_julia(int key, t_fra *e)

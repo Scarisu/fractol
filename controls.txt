@@ -15,3 +15,7 @@ n = zoom- central(LF)
 esc = exit (b / right_b)
 
 CP Thread
+
+
+nom de la fenetre changeant
+centraliser certaines fractal
