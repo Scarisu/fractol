@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/16 18:25:49 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 12:01:20 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,5 +153,5 @@ void				burningship(t_fra *e);
 void				celtic_mandelbrot(t_fra *e);
 void				mandelbar(t_fra *e);
 void				celtic_mandelbar(t_fra *e);
-
+void				cubic_burningship(t_fra *e);
 #endif
