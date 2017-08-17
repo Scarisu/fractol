@@ -6,11 +6,18 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/17 12:15:35 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 13:40:04 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 15:56:47 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
+
+void	sp_perpendicular_mandelbrot(t_fra *e)
+{
+	e->zoom = 1.2;
+	e->ms_y += -1.1 * e->zoom / 10;
+	e->ms_x += 0.5 * e->zoom / 10;
+}
 
 void	calcul_perpendicular_mandelbrot(t_fra *e)
 {

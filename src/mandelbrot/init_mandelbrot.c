@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:09:52 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 13:56:33 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 15:54:48 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ void	reset_mandelbrot_mini(t_fra *e)
 	e->zoom = 1;
 	e->ms_x = -2.1 + 0.5;
 	e->ms_y = -1.2 + 0.5;
+	(!(ft_strcmp(e->name, "burningship"))) ? sp_burningship(e) : 0;
+	(!(ft_strcmp(e->name, "celtic_mandelbrot"))) ? sp_celtic_mandelbrot(e) : 0;
+	(!(ft_strcmp(e->name, "mandelbar"))) ? sp_mandelbar(e) : 0;
+	(!(ft_strcmp(e->name, "cubic_burningship"))) ? sp_cubic_burningship(e) : 0;
+	(!(ft_strcmp(e->name, "perpendicular_mandelbrot"))) ?
+		sp_perpendicular_mandelbrot(e) : 0;
 }
 
 void	reset_mandelbrot(t_fra *e)

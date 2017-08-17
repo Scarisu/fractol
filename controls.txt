@@ -18,4 +18,3 @@ CP Thread
 
 
 nom de la fenetre changeant
-centraliser certaines fractal

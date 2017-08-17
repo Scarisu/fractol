@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 13:03:11 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 14:58:36 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 15:05:57 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	julia(t_fra *e)
 {
 	if (!e->win)
 		init_mlx_julia(e);
-	e->name = "julia";
 	init_julia(e);
 	while (++e->j.x < X)
 	{

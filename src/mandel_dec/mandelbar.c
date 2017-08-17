@@ -6,11 +6,18 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/16 18:17:53 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 13:39:57 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 15:40:54 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
+
+void	sp_mandelbar(t_fra *e)
+{
+	e->zoom = 1.5;
+	e->ms_y += -2.4 * e->zoom / 10;
+	e->ms_x += 1 * e->zoom / 10;
+}
 
 void	calcul_mandelbar(t_fra *e)
 {

@@ -6,11 +6,18 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/16 18:05:03 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 13:40:14 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 15:36:24 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
+
+void	sp_celtic_mandelbrot(t_fra *e)
+{
+	e->zoom = 1.5;
+	e->ms_y += -2.4 * e->zoom / 10;
+	e->ms_x += -3 * e->zoom / 10;
+}
 
 void	calcul_celtic_mandelbrot(t_fra *e)
 {

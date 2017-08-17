@@ -6,11 +6,18 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:31:56 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 14:36:39 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 16:01:01 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
+
+void	sp_burningship(t_fra *e)
+{
+	e->zoom = 1.2;
+	e->ms_y += -5 * e->zoom / 10;
+	e->ms_x += 1.4 * e->zoom / 10;
+}
 
 void	calcul_burningship(t_fra *e)
 {

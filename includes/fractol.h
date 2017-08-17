@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 14:50:37 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 15:54:16 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,11 +165,22 @@ int					key_mandelbrot(int key, t_fra *e);
 int					key_mouse_mandelbrot(int key, int x, int y, t_fra *e);
 
 void				burningship(t_fra *e);
+void				sp_burningship(t_fra *e);
+
 void				celtic_mandelbrot(t_fra *e);
+void				sp_celtic_mandelbrot(t_fra *e);
+
 void				mandelbar(t_fra *e);
+void 				sp_mandelbar(t_fra *e);
+
 void				celtic_mandelbar(t_fra *e);
+
 void				cubic_burningship(t_fra *e);
+void				sp_cubic_burningship(t_fra *e);
+
 void				perpendicular_mandelbrot(t_fra *e);
+void				sp_perpendicular_mandelbrot(t_fra *e);
+
 void				heart_mandelbrot(t_fra *e);
 
 #endif

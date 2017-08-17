@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:36:48 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 14:55:36 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 15:05:35 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int			key_mouse_mandelbrot(int key, int x, int y, t_fra *e)
 	long double		tmp_mx;
 	long double		tmp_my;
 
-	printf("%d - %d\n", x, y);
 	tmp_mx = (long double)x;
 	tmp_my = (long double)y;
 	if ((key == MOL_UP || key == C_LR) && y > 0)
@@ -26,7 +25,7 @@ int			key_mouse_mandelbrot(int key, int x, int y, t_fra *e)
 		e->ms_y += (tmp_my / (Y / (e->m.y2 - e->m.y1)) - 0.5) * e->zoom / 10;
 		e->zoom /= 1.1;
 	}
-	else if ((key == MOL_DOWN || key == C_LF) && y > 0 && e->zoom < 1)
+	else if ((key == MOL_DOWN || key == C_LF) && y > 0 && e->zoom < 1.2)
 	{
 		e->ms_x -= (tmp_mx / (X / (e->m.x2 - e->m.x1)) - 0.5) * e->zoom / 10;
 		e->ms_y -= (tmp_my / (Y / (e->m.y2 - e->m.y1)) - 0.5) * e->zoom / 10;
