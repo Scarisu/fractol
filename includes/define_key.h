@@ -6,9 +6,12 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/17 17:08:07 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 17:24:56 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 18:16:37 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef DEFINE_KEY_H
+# define DEFINE_KEY_H
 
 # define KEY_ESC 53
 # define KEY_F1 122
@@ -67,7 +70,6 @@
 # define KEY_8 91
 # define KEY_9 92
 
-
 # define MOL_UP 5
 # define MOL_DOWN 4
 # define L_CLICK 1
@@ -76,3 +78,5 @@
 # define C_A 36
 # define C_LR 1
 # define C_LF 2
+
+#endif
