@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/17 12:27:58 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 13:09:20 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 13:40:07 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	heart_mandelbrot(t_fra *e)
 {
 	if (!e->win)
 		init_mlx_mandelbrot(e);
-	e->name = "heart_mandelbrot";
 	init_mandelbrot(e);
 	while (++e->m.x < X)
 	{

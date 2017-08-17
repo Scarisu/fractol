@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 13:26:00 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 14:09:10 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,7 @@ typedef struct		s_fra
 	long double		ms_y;
 	long double		zoom;
 	int				lock;
+	int				key_save;
 	t_color			pix;
 	t_mendel		m;
 	t_julia			j;
@@ -146,6 +147,7 @@ void				julia(t_fra *e);
 void				init_mlx_julia(t_fra *e);
 void				init_julia(t_fra *e);
 void				reset_julia(t_fra *e);
+void				reset_julia_mini(t_fra *e);
 int					key_julia(int key, t_fra *e);
 int					key_mouse_julia(int key, int x, int y, t_fra *e);
 int					motion_mouse_julia(int x, int y, t_fra *e);
@@ -155,6 +157,7 @@ void				mandelbrot(t_fra *e);
 void				init_mlx_mandelbrot(t_fra *e);
 void				init_mandelbrot(t_fra *e);
 void				reset_mandelbrot(t_fra *e);
+void				reset_mandelbrot_mini(t_fra *e);
 void				str_string_mandelbrot(t_fra *e);
 int					key_mandelbrot(int key, t_fra *e);
 int					key_mouse_mandelbrot(int key, int x, int y, t_fra *e);

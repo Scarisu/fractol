@@ -6,11 +6,12 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 18:07:31 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 13:37:01 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 14:16:02 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
+
 void	change_fractol(int key, t_fra *e)
 {
 	e->name = (key == KEY_1) ? "mandelbrot" : e->name;
@@ -22,29 +23,32 @@ void	change_fractol(int key, t_fra *e)
 	e->name = (key == KEY_7) ? "cubic_burningship" : e->name;
 	e->name = (key == KEY_8) ? "perpendicular_mandelbrot" : e->name;
 	e->name = (key == KEY_9) ? "heart_mandelbrot" : e->name;
+	if (key == KEY_1 || key == KEY_3 || key == KEY_4 || key == KEY_5 ||
+		key == KEY_6 || key == KEY_7 || key == KEY_8 || key == KEY_9)
+	{
+		e->key_save = key;
+		reset_mandelbrot_mini(e);
+	}
+	if (key == KEY_2)
+	{
+		e->key_save = key;
+		reset_julia_mini(e);
+	}
 }
 
 void	restart_key(int key, t_fra *e)
 {
-	change_fractol(key, e);
-	if (!(ft_strcmp(e->name, "mandelbrot")))
-		mandelbrot(e);
-	else if (!(ft_strcmp(e->name, "julia")))
-		julia(e);
-	else if (!(ft_strcmp(e->name, "burningship")))
-		burningship(e);
-	else if (!(ft_strcmp(e->name, "celtic_mandelbrot")))
-		celtic_mandelbrot(e);
-	else if (!(ft_strcmp(e->name, "mandelbar")))
-		mandelbar(e);
-	else if (!(ft_strcmp(e->name, "celtic_mandelbar")))
-		celtic_mandelbar(e);
-	else if (!(ft_strcmp(e->name, "cubic_burningship")))
-		cubic_burningship(e);
-	else if (!(ft_strcmp(e->name, "perpendicular_mandelbrot")))
-		perpendicular_mandelbrot(e);
-	else if (!(ft_strcmp(e->name, "heart_mandelbrot")))
-		heart_mandelbrot(e);
+	(key != -1 && e->key_save != key) ? change_fractol(key, e) : 0;
+	(!(ft_strcmp(e->name, "mandelbrot"))) ? mandelbrot(e) : 0;
+	(!(ft_strcmp(e->name, "julia"))) ? julia(e) : 0;
+	(!(ft_strcmp(e->name, "burningship"))) ? burningship(e) : 0;
+	(!(ft_strcmp(e->name, "celtic_mandelbrot"))) ? celtic_mandelbrot(e) : 0;
+	(!(ft_strcmp(e->name, "mandelbar"))) ? mandelbar(e) : 0;
+	(!(ft_strcmp(e->name, "celtic_mandelbar"))) ? celtic_mandelbar(e) : 0;
+	(!(ft_strcmp(e->name, "cubic_burningship"))) ? cubic_burningship(e) : 0;
+	(!(ft_strcmp(e->name, "perpendicular_mandelbrot"))) ?
+		perpendicular_mandelbrot(e) : 0;
+	(!(ft_strcmp(e->name, "heart_mandelbrot"))) ? heart_mandelbrot(e) : 0;
 }
 
 void	my_error(int nb, t_fra e)
@@ -93,6 +97,7 @@ int		main(int ac, char **av)
 	void		*(*fra[9])(t_fra *);
 
 	e.name = av[1];
+	e.key_save = -1;
 	if (ac != 2)
 		my_error(1, e);
 	fra[0] = (void *)&julia;

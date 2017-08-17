@@ -6,26 +6,31 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:12:01 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/16 12:45:48 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 13:59:57 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
 
-void	reset_julia(t_fra *e)
+void	reset_julia_mini(t_fra *e)
 {
 	e->zoom = 1;
+	e->ms_x = -1 + 0.5;
+	e->ms_y = -1.2 + 0.5;
+	e->j.c_r = 0.285;
+	e->j.c_i = 0.01;
+	e->lock = -1;
+}
+
+void	reset_julia(t_fra *e)
+{
 	e->alpha = 20;
 	e->mul_imax = 5;
 	e->color = 0;
 	e->c_on = 0;
 	e->c_adj = 1;
 	e->rgb = hue_color(0);
-	e->ms_x = -1 + 0.5;
-	e->ms_y = -1.2 + 0.5;
-	e->j.c_r = 0.285;
-	e->j.c_i = 0.01;
-	e->lock = -1;
+	reset_julia_mini(e);
 }
 
 void	init_mlx_julia(t_fra *e)

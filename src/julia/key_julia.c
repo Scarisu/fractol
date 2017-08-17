@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:36:00 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 13:18:20 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 14:09:49 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int			motion_mouse_julia(int x, int y, t_fra *e)
 		e->j.c_r = x / win_size[0];
 		e->j.c_i = y / win_size[1];
 	}
-	restart_key(0, e);
+	restart_key(-1, e);
 	return (0);
 }
 
@@ -45,7 +45,7 @@ int			key_mouse_julia(int key, int x, int y, t_fra *e)
 		e->ms_y -= (tmp_my / (Y / (e->j.y2 - e->j.y1)) - 0.5) * e->zoom / 10;
 		e->zoom /= 0.9;
 	}
-	restart_key(0, e);
+	restart_key(-1, e);
 	return (0);
 }
 

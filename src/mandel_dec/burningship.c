@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:31:56 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 13:07:18 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 13:40:22 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	burningship(t_fra *e)
 {
 	if (!e->win)
 		init_mlx_mandelbrot(e);
-	e->name = "burningship";
 	init_mandelbrot(e);
 	while (++e->m.x < X)
 	{

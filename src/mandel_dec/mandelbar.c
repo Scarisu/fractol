@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/16 18:17:53 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 13:09:36 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 13:39:57 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	mandelbar(t_fra *e)
 {
 	if (!e->win)
 		init_mlx_mandelbrot(e);
-		e->name = "mandelbar";
 	init_mandelbrot(e);
 	while (++e->m.x < X)
 	{

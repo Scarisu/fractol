@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/17 12:15:35 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 13:10:02 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 13:40:04 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	perpendicular_mandelbrot(t_fra *e)
 {
 	if (!e->win)
 		init_mlx_mandelbrot(e);
-	e->name = "perpendicular_mandelbrot";
 	init_mandelbrot(e);
 	while (++e->m.x < X)
 	{

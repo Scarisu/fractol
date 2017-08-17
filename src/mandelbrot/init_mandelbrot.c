@@ -6,23 +6,28 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:09:52 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 12:56:12 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 13:56:33 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
 
-void	reset_mandelbrot(t_fra *e)
+void	reset_mandelbrot_mini(t_fra *e)
 {
 	e->zoom = 1;
+	e->ms_x = -2.1 + 0.5;
+	e->ms_y = -1.2 + 0.5;
+}
+
+void	reset_mandelbrot(t_fra *e)
+{
 	e->alpha = 20;
 	e->mul_imax = 5;
 	e->color = 0;
 	e->c_on = 0;
 	e->c_adj = 1;
 	e->rgb = hue_color(0);
-	e->ms_x = -2.1 + 0.5;
-	e->ms_y = -1.2 + 0.5;
+	reset_mandelbrot_mini(e);
 }
 
 void	init_mlx_mandelbrot(t_fra *e)
