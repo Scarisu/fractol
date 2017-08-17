@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:36:00 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 16:52:34 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/17 17:03:44 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void		position_julia(int key, t_fra *e)
 		e->mul_imax += 1;
 	else if (key == MIN)
 		e->mul_imax -= 1;
-	else if (key == KEY_Q || key == C_LEFT)
+	else if (key == KEY_TAB)
 		reset_julia_mini(e);
 }
 
@@ -87,7 +87,7 @@ int			key_julia(int key, t_fra *e)
 {
 	if (key == ESC)
 		exit(0);
-	else if (key == KEY_TAB)
+	else if (key == KEY_Q)
 		reset_julia(e);
 	else if (key == KEY_A)
 		e->alpha += 2;

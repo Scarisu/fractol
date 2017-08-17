@@ -10,8 +10,8 @@
   [M] 	= Zoom in (centre)				[4] = celtic_mandelbrot
   [N] 	= Zoom out (centre)				[5] = mandelbar
   										[6] = celtic_mandelbar
- [TAB]	= Reset all						[7]	= cubic_burningship
-  [Q]	= Reset position				[8] = perpendicular_mandelbrot
+   [Q]	= Reset all						[7]	= cubic_burningship
+  [TAB]	= Reset position				[8] = perpendicular_mandelbrot
   										[9] = heart_mandelbrot
   [UP] 	= Move up
   [DW]	= Move down
@@ -29,5 +29,5 @@
  [Jk.RT] = Move right		  [RT.b] | [B] = close
  [Jk.LT] = Move left
 								[RT.g]   = Zoom in (mouse)
-  Pad] = mouse					[LT.g]	 = Zoom out (mouse)
+ [Pad] = mouse					[LT.g]	 = Zoom out (mouse)
   [A]  = ms. mov. (julia)
