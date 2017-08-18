@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 13:03:11 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 18:00:19 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/18 12:46:52 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	julia(t_fra *e)
 		while (++e->j.y < Y)
 		{
 			calcul_julia(e);
-			e->rgb = hue_color(e->c_on / e->j.imax * e->j.i + e->color);
+			hue_color(e->c_on / e->j.imax * e->j.i + e->color, e);
 			if (e->j.i >= e->j.imax)
 				e->pix = get_color(0, 0, 0, 0);
 			else

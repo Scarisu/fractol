@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 18:16:52 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/18 12:54:41 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ typedef struct		s_fra
 	int				alpha;
 	int				mul_imax;
 	int				color;
-	int				*rgb;
+	int				rgb[3];
 	char			*s_alpha;
 	char			*s_imax;
 	char			*s_color;
@@ -105,7 +105,7 @@ void				conv_img(int x, int y, t_fra *e);
 
 t_color				get_color(int r, int g, int b, int a);
 void				all_black(t_fra *e);
-int					*hue_color(int i);
+void				hue_color(int i, t_fra *e);
 
 void				julia(t_fra *e);
 void				init_mlx_julia(t_fra *e);

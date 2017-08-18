@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:09:52 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 17:51:03 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/18 12:54:50 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	reset_mandelbrot(t_fra *e)
 	e->color = 0;
 	e->c_on = 0;
 	e->c_adj = 1;
-	e->rgb = hue_color(0);
+	hue_color(0, e);
 	reset_mandelbrot_mini(e);
 }
 

@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 14:31:56 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 16:01:01 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/18 12:44:36 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	burningship(t_fra *e)
 		while (++e->m.y < Y)
 		{
 			calcul_burningship(e);
-			e->rgb = hue_color(e->c_on / e->m.imax * e->m.i + e->color);
+			hue_color(e->c_on / e->m.imax * e->m.i + e->color, e);
 			if (e->m.i >= e->m.imax)
 				e->pix = get_color(0, 0, 0, 0);
 			else

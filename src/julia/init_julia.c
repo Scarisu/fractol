@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:12:01 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 17:54:53 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/18 12:46:30 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	reset_julia(t_fra *e)
 	e->color = 0;
 	e->c_on = 0;
 	e->c_adj = 1;
-	e->rgb = hue_color(0);
+	hue_color(0, e);
 	reset_julia_mini(e);
 }
 

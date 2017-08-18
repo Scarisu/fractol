@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/16 18:22:51 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 13:40:18 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/18 12:44:24 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	celtic_mandelbar(t_fra *e)
 		while (++e->m.y < Y)
 		{
 			calcul_celtic_mandelbar(e);
-			e->rgb = hue_color(e->c_on / e->m.imax * e->m.i + e->color);
+			hue_color(e->c_on / e->m.imax * e->m.i + e->color, e);
 			if (e->m.i >= e->m.imax)
 				e->pix = get_color(0, 0, 0, 0);
 			else

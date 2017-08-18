@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/17 11:58:15 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/17 15:51:17 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/18 12:43:59 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	cubic_burningship(t_fra *e)
 		while (++e->m.y < Y)
 		{
 			calcul_cubic_burningship(e);
-			e->rgb = hue_color(e->c_on / e->m.imax * e->m.i + e->color);
+			hue_color(e->c_on / e->m.imax * e->m.i + e->color, e);
 			if (e->m.i >= e->m.imax)
 				e->pix = get_color(0, 0, 0, 0);
 			else
