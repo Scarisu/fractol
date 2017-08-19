@@ -1,5 +1,5 @@
 
-   { Keybord }								{ Numeric keypad }
+   { Keyboard }								{ Numeric keypad }
 
   [A] 	= Alpha +						[+] = Imax +
   [Z] 	= Alpha -						[-] = Imax -

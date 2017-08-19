@@ -6,15 +6,15 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 17:56:44 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/18 12:54:41 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/19 11:31:50 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define X 731
-# define Y 650
+# define X 800
+# define Y 700
 
 # define WHITE 0xFFFFFF
 

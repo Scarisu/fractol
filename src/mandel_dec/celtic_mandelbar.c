@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/16 18:22:51 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/18 12:44:24 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/19 11:22:47 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	celtic_mandelbar(t_fra *e)
 			else
 				e->pix = get_color(e->rgb[0], e->rgb[1], e->rgb[2],
 					e->m.i * e->alpha);
-			e->m.imax = 10 * e->mul_imax - log(e->zoom * 4);
+			e->m.imax = 10 * e->mul_imax - log(e->zoom);
 			conv_img(e->m.x, e->m.y, e);
 		}
 	}

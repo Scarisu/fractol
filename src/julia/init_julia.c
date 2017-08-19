@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:12:01 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/18 12:46:30 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/19 11:07:55 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	reset_julia_mini(t_fra *e)
 void	reset_julia(t_fra *e)
 {
 	e->alpha = 20;
-	e->mul_imax = 5;
+	e->mul_imax = 7;
 	e->color = 0;
 	e->c_on = 0;
 	e->c_adj = 1;

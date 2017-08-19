@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 13:03:11 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/18 12:46:52 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/19 11:23:02 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	julia(t_fra *e)
 			else
 				e->pix = get_color(e->rgb[0], e->rgb[1], e->rgb[2],
 						e->j.i * e->alpha);
-			e->j.imax = 10 * e->mul_imax - log(e->zoom * 4);
+			e->j.imax = 10 * e->mul_imax - log(e->zoom);
 			conv_img(e->j.x, e->j.y, e);
 		}
 	}
