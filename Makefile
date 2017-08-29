@@ -6,14 +6,14 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:32:35 by pbernier          #+#    #+#              #
-#    Updated: 2017/08/18 13:00:32 by pbernier         ###   ########.fr        #
+#    Updated: 2017/08/29 20:15:28 by pbernier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 PROJECT			=	FRACTOL
 NAME			=	fractol
-BINDIR			=	bin/
-SRCDIR			=	src/
+OBJDIR			=	objs/
+SRCDIR			=	srcs/
 SRC				=	fractol.c \
 					print_pix.c \
 					color.c \
@@ -30,41 +30,40 @@ SRC				=	fractol.c \
 					mandel_dec/cubic_burningship.c \
 					mandel_dec/perpendicular_mandelbrot.c \
 					mandel_dec/heart_mandelbrot.c
-SIERRA			=
-OBJ				=	$(addprefix $(BINDIR),$(SRC:.c=.o))
+OBJ				=	$(addprefix $(OBJDIR),$(SRC:.c=.o))
 LIB				=	libft/libft.a \
-					minilibx_macos$(SIERRA)/libmlx.a
+					minilibx_macos/libmlx.a
 CC				=	gcc
 FLAGS			=	-Wall -Werror -Wextra -Ofast
 FLAGS_MLX		=	-framework OpenGL -framework AppKit
-INCLUDES		=	-I includes/ -I libft/includes/
+INCLUDES		=	-I includes/ -I libft/includes/ -I minilibx_macos/
 
 all: $(NAME)
 
-$(NAME): $(BINDIR) $(OBJ)
+$(NAME): $(OBJDIR) $(OBJ)
 	@make -C libft
-	@make -C minilibx_macos$(SIERRA)
-	@printf "[$(PROJECT)] Bin compilation done.                                                \n"
+	@make -C minilibx_macos
+	@printf "[$(PROJECT)] Objs compilation done.                                               \n"
 	@$(CC) -o $(NAME) $(OBJ) $(LIB) $(FLAGS) $(FLAGS_MLX)
 	@printf "[$(PROJECT)] $(NAME) compiled.                                                    \n"
 
 
-$(BINDIR)%.o: $(SRCDIR)%.c
-	@printf "[$(PROJECT)] Compiling $< to $@                                                   \r"
+$(OBJDIR)%.o: $(SRCDIR)%.c
+	@printf "[$(PROJECT)] Compiling $< to $@                                                                 \r"
 	@$(CC) $(FLAGS) $(INCLUDES) -o $@ -c $<
 
-$(BINDIR):
-	@mkdir bin
-	@mkdir bin/julia
-	@mkdir bin/mandelbrot
-	@mkdir bin/mandel_dec
+$(OBJDIR):
+	@mkdir objs
+	@mkdir objs/julia
+	@mkdir objs/mandelbrot
+	@mkdir objs/mandel_dec
 
 
 clean:
 	@rm -f $(OBJ)
 	@rm -rf $(BINDIR)
 	@make -C libft clean
-	@make -C minilibx_macos$(SIERRA) clean
+	@make -C minilibx_macos clean
 	@printf "[$(PROJECT)] Obj removed.                                                           \n"
 
 fclean: clean

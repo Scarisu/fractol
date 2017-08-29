@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/03 18:07:31 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/18 12:49:56 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/29 20:14:17 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ void	my_error(int nb, t_fra e)
 	}
 	if (nb <= 1)
 	{
-		ft_putstr("usage : ./fractol\nmandelbrot | julia | ");
+		ft_putstr("usage : ./fractol fractol_name\n");
+		ft_putstr("fractol_name : mandelbrot | julia | ");
 		ft_putstr("burningship\nceltic_mandelbrot | mandelbar\n");
 		ft_putstr("celtic_mandelbar | cubic_burningship\n");
 		ft_putstr("perpendicular_mandelbrot | heart_mandelbrot\n");

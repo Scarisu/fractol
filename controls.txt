@@ -4,7 +4,7 @@
   [A] 	= Alpha +						[+] = Imax +
   [Z] 	= Alpha -						[-] = Imax -
   [C] 	= Change color
-  [V] 	= Color number					[1] = mandelbrot
+  [V] 	= Color number					[1] = Mandelbrot
 [clear] = Hide interface				[2] = julia
   										[3] = burningship
   [M] 	= Zoom in (centre)				[4] = celtic_mandelbrot
@@ -18,7 +18,7 @@
   [RT]	= Move right							  { Mouse }
   [LT]	= Move left
  									[RT.c] | [Sc.Dw] = Zoom out (mouse)
- [ret.] = ms. mov. (julia)			[LT.c] | [Sc.Up] = Zoom in (mouse)
+ [ret.] = ms. mov. (Julia)			[LT.c] | [Sc.Up] = Zoom in (mouse)
   [ESC] = close
 
 
@@ -30,4 +30,4 @@
  [Jk.LT] = Move left
 								[RT.g]   = Zoom in (mouse)
  [Pad] = mouse					[LT.g]	 = Zoom out (mouse)
-  [A]  = ms. mov. (julia)
+  [A]  = ms. mov. (Julia)
